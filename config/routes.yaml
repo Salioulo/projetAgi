@@ -1,0 +1,37 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+admin_secteur_new:
+    path: /admin/secteur/nouveau
+    controller: App\Controller\Admin\SecteurController::new
+    methods: GET|POST
+    defaults:
+      template: 'admin\secteur\new.html.twig'
+
+admin_secteur_edit:
+    path: /admin/secteur/{id}/edit
+    controller: App\Controller\Admin\SecteurController::edit
+    methods: GET|POST
+    defaults:
+      template: 'admin\secteur\edit.html.twig'
+
+admin_secteur_index:
+    path: /admin/secteur/index
+    controller: App\Controller\Admin\SecteurController::index
+    methods: GET
+    defaults:
+      template: 'admin\secteur\index.html.twig'
+
+admin_secteur_show:
+    path: /admin/secteur/{id}/show
+    controller: App\Controller\Admin\SecteurController::show
+    methods: GET
+    defaults:
+      template: 'admin\secteur\show.html.twig'
+
+admin_secteur_delete:
+    path: /admin/secteur/{id}/delete
+    controller: App\Controller\Admin\SecteurController::delete
+    methods: DELETE
+    defaults:
+      template: 'admin\secteur\_delete_form.html.twig'

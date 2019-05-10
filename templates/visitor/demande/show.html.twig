@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Demande{% endblock %}
+
+{% block body %}
+    <h1>Demande</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ demande.id }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ demande.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ demande.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ demande.adresse }}</td>
+            </tr>
+            <tr>
+                <th>DescriptionProbleme</th>
+                <td>{{ demande.descriptionProbleme }}</td>
+            </tr>
+            <tr>
+                <th>Traiter</th>
+                <td>{{ demande.traiter }}</td>
+            </tr>
+            <tr>
+                <th>Periode</th>
+                <td>{{ demande.periode }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ demande.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ demande.email }}</td>
+            </tr>
+            <tr>
+                <th>LibelleMateriel</th>
+                <td>{{ demande.libelleMateriel }}</td>
+            </tr>
+            <tr>
+                <th>Marque</th>
+                <td>{{ demande.marque }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('demande_index') }}">back to list</a>
+
+    <a href="{{ path('demande_edit', {'id': demande.id}) }}">edit</a>
+
+    {{ include('visitor/demande/_delete_form.html.twig') }}
+{% endblock %}

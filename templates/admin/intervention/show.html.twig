@@ -1,0 +1,66 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Intervention{% endblock %}
+
+{% block body %}
+    <h1>Intervention</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ intervention.id }}</td>
+            </tr>
+            <tr>
+                <th>DateDebut</th>
+                <td>{{ intervention.dateDebut ? intervention.dateDebut|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ intervention.description }}</td>
+            </tr>
+            <tr>
+                <th>Resultat</th>
+                <td>{{ intervention.resultat }}</td>
+            </tr>
+            <tr>
+                <th>ModePayment</th>
+                <td>{{ intervention.modePayment }}</td>
+            </tr>
+            <tr>
+                <th>ModeTransaction</th>
+                <td>{{ intervention.modeTransaction }}</td>
+            </tr>
+            <tr>
+                <th>Montant</th>
+                <td>{{ intervention.montant }}</td>
+            </tr>
+            <tr>
+                <th>TypeIntervention</th>
+                <td>{{ intervention.typeIntervention }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ intervention.createdAt ? intervention.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ intervention.updatedAt ? intervention.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>CreatedBy</th>
+                <td>{{ intervention.createdBy }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedBy</th>
+                <td>{{ intervention.updatedBy }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_intervention_index') }}">back to list</a>
+
+    <a href="{{ path('admin_intervention_edit', {'id': intervention.id}) }}">edit</a>
+
+    {{ include('admin/intervention/_delete_form.html.twig') }}
+{% endblock %}
