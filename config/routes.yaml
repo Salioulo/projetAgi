@@ -1,0 +1,194 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+admin_secteur_new:
+    path: /admin/secteur/new
+    controller: App\Controller\Admin\SecteurController::new
+    methods: GET|POST
+    defaults:
+      template: 'admin\secteur\new.html.twig'
+admin_secteur_edit:
+    path: /admin/secteur/{id}/edit
+    controller: App\Controller\Admin\SecteurController::edit
+    methods: GET|POST
+    defaults:
+      template: 'admin\secteur\edit.html.twig'
+admin_secteur_index:
+    path: /admin/secteur/index
+    controller: App\Controller\Admin\SecteurController::index
+    methods: GET
+    defaults:
+      template: 'admin\secteur\index.html.twig'
+admin_secteur_show:
+    path: /admin/secteur/{id}/show
+    controller: App\Controller\Admin\SecteurController::show
+    methods: GET
+    defaults:
+      template: 'admin\secteur\show.html.twig'
+admin_secteur_delete:
+    path: /admin/secteur/{id}/delete
+    controller: App\Controller\Admin\SecteurController::delete
+    methods: DELETE
+    defaults:
+      template: 'admin\secteur\_delete_form.html.twig'
+
+
+admin_technicien_new:
+    path: /admin/technicien/new
+    controller: App\Controller\Admin\TechnicienController::new
+    methods: GET|POST
+    defaults:
+      template: 'admin\technicien\new.html.twig'
+admin_technicien_edit:
+    path: /admin/technicien/{id}/edit
+    controller: App\Controller\Admin\TechnicienController::edit
+    methods: GET|POST
+    defaults:
+      template: 'admin\technicien\edit.html.twig'
+admin_technicien_index:
+    path: /admin/technicien/index
+    controller: App\Controller\Admin\TechnicienController::index
+    methods: GET
+    defaults:
+      template: 'admin\technicien\index.html.twig'
+admin_technicien_show:
+    path: /admin/technicien/{id}/show
+    controller: App\Controller\Admin\TechnicienController::show
+    methods: GET
+    defaults:
+      template: 'admin\technicien\show.html.twig'
+admin_technicien_delete:
+    path: /admin/technicien/{id}/delete
+    controller: App\Controller\Admin\TechnicienController::delete
+    methods: DELETE
+    defaults:
+      template: 'admin\technicien\_delete.html.twig'
+
+
+admin_entreprise_new:
+    path: /admin/entreprise/new
+    controller: App\Controller\Admin\EntrepriseController::new
+    methods: GET|POST
+    defaults:
+      template: 'admin\entreprise\new.html.twig'
+admin_entreprise_edit:
+    path: /admin/entreprise/{id}/edit
+    controller: App\Controller\Admin\EntrepriseController::edit
+    methods: GET|POST
+    defaults:
+      template: 'admin\entreprise\edit.html.twig'
+admin_entreprise_index:
+    path: /admin/entreprise/index
+    controller: App\Controller\Admin\EntrepriseController::index
+    methods: GET
+    defaults:
+      template: 'admin\entreprise\index.html.twig'
+admin_entreprise_show:
+    path: /admin/entreprise/{id}/show
+    controller: App\Controller\Admin\EntrepriseController::show
+    methods: GET
+    defaults:
+      template: 'admin\entreprise\show.html.twig'
+admin_entreprise_delete:
+    path: /admin/entreprise/{id}/delete
+    controller: App\Controller\Admin\EntrepriseController::delete
+    methods: DELETE
+    defaults:
+      template: 'admin\entreprise\_delete.html.twig'
+
+admin_materiel_new:
+    path: /admin/materiel/new
+    controller: App\Controller\Admin\MaterielController::new
+    methods: GET|POST
+    defaults:
+      template: 'admin\materiel\new.html.twig'
+admin_materiel_edit:
+    path: /admin/materiel/{id}/edit
+    controller: App\Controller\Admin\MaterielController::edit
+    methods: GET|POST
+    defaults:
+      template: 'admin\materiel\edit.html.twig'
+admin_materiel_index:
+    path: /admin/materiel/index
+    controller: App\Controller\Admin\MaterielController::index
+    methods: GET
+    defaults:
+      template: 'admin\materiel\index.html.twig'
+admin_materiel_show:
+    path: /admin/materiel/{id}/show
+    controller: App\Controller\Admin\MaterielController::show
+    methods: GET|POST
+    defaults:
+      template: 'admin\materiel\show.html.twig'
+admin_materiel_delete:
+    path: /admin/materiel/{id}/delete
+    controller: App\Controller\Admin\MaterielController::delete
+    methods: DELETE
+    defaults:
+      template: 'admin\materiel\_delete.html.twig'
+
+admin_intervention_new:
+    path: admin/intervention/new
+    controller: App\Controller\Admin\InterventionController::new
+    methods: GET|POST
+    defaults:
+      template: 'admin\intervention\new.html.twig'
+admin_intervention_edit:
+    path: admin/intervention/{id}/edit
+    controller: App\Controller\Admin\InterventionController::edit
+    methods: GET|POST
+    defaults:
+      template: 'admin\intervention\edit.html.twig'
+admin_intervention_index:
+    path: admin/intervention/index
+    controller: App\Controller\Admin\InterventionController::index
+    methods: GET
+    defaults:
+      template: 'admin\intervention\index.html.twig'
+admin_intervention_show:
+    path: admin/intervention/{id}/show
+    controller: App\Controller\Admin\InterventionController::show
+    methods: GET
+    defaults:
+      template: 'admin\intervention\show.html.twig'
+admin_intervention_delete:
+    path: admin/intervention/{id}/delete
+    controller: App\Controller\Admin\InterventionController::delete
+    methods: DELETE
+    defaults:
+      template: 'admin\intervention\_delete.html.twig'
+
+demande_nouveau:
+    path: demande/new
+    controller: App\Controller\Visitor\DemandeController::new
+    methods: GET|POST
+    defaults:
+      template: 'visitor\demande\new.html.twig'
+demande_edit:
+    path: demande/{id}/edit
+    controller: App\Controller\Visitor\DemandeController::edit
+    methods: GET|POST
+    defaults:
+      template: 'visitor\demande\edit.html.twig'
+demande_index:
+    path: demande/index
+    controller: App\Controller\Visitor\DemandeController::index
+    methods: GET
+    defaults:
+      template: 'visitor\demande\index.html.twig'
+demande_show:
+    path: demande/show
+    controller: App\Controller\Visitor\DemandeController::show
+    methods: GET
+    defaults:
+      template: 'visitor\demande\show.html.twig'
+demande_delete:
+    path: demande/{id}/delete
+    controller: App\Controller\Visitor\DemandeController::delete
+    methods: DELETE
+    defaults:
+      template: 'visitor\demande\_delete.html.twig'
+
+
+    
+      

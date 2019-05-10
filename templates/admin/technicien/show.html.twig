@@ -1,0 +1,74 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Technicien{% endblock %}
+
+{% block body %}
+    <h1>Technicien</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ technicien.id }}</td>
+            </tr>
+            <tr>
+                <th>Cni</th>
+                <td>{{ technicien.cni }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ technicien.nom }}</td>
+            </tr>
+            <tr>
+                <th>Prenom</th>
+                <td>{{ technicien.prenom }}</td>
+            </tr>
+            <tr>
+                <th>Telephone</th>
+                <td>{{ technicien.telephone }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ technicien.email }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ technicien.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Specialite</th>
+                <td>{{ technicien.specialite }}</td>
+            </tr>
+            <tr>
+                <th>Niveau</th>
+                <td>{{ technicien.niveau }}</td>
+            </tr>
+            <tr>
+                <th>Disponibilite</th>
+                <td>{{ technicien.disponibilite ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>Actif</th>
+                <td>{{ technicien.actif ? 'Yes' : 'No' }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ technicien.createdAt ? technicien.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ technicien.updatedAt ? technicien.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DeletedAt</th>
+                <td>{{ technicien.deletedAt ? technicien.deletedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('admin_technicien_index') }}">back to list</a>
+
+    <a href="{{ path('admin_technicien_edit', {'id': technicien.id}) }}">edit</a>
+
+    {{ include('admin/technicien/_delete_form.html.twig') }}
+{% endblock %}
