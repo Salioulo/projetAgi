@@ -74,24 +74,14 @@ class Entreprise
     private $updatedAt;
 
     /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $deletedAt;
+
+    /**
      * @ORM\ManyToMany(targetEntity="App\Entity\Secteur")
      */
     private $secteur;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $createdBy;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $updatedBy;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     */
-    private $nom;
 
     public function __construct()
     {
@@ -235,6 +225,18 @@ class Entreprise
         return $this;
     }
 
+    public function getDeletedAt(): ?\DateTimeInterface
+    {
+        return $this->deletedAt;
+    }
+
+    public function setDeletedAt(?\DateTimeInterface $deletedAt): self
+    {
+        $this->deletedAt = $deletedAt;
+
+        return $this;
+    }
+
     /**
      * @return Collection|Secteur[]
      */
@@ -257,42 +259,6 @@ class Entreprise
         if ($this->secteur->contains($secteur)) {
             $this->secteur->removeElement($secteur);
         }
-
-        return $this;
-    }
-
-    public function getCreatedBy(): ?string
-    {
-        return $this->createdBy;
-    }
-
-    public function setCreatedBy(?string $createdBy): self
-    {
-        $this->createdBy = $createdBy;
-
-        return $this;
-    }
-
-    public function getUpdatedBy(): ?string
-    {
-        return $this->updatedBy;
-    }
-
-    public function setUpdatedBy(?string $updatedBy): self
-    {
-        $this->updatedBy = $updatedBy;
-
-        return $this;
-    }
-
-    public function getNom(): ?string
-    {
-        return $this->nom;
-    }
-
-    public function setNom(string $nom): self
-    {
-        $this->nom = $nom;
 
         return $this;
     }

@@ -49,12 +49,12 @@ class Secteur
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $updatedBy;
+    private $deletedBy;
 
     /**
-     * @ORM\Column(type="datetime", nullable=true)
+     * @ORM\Column(type="string", length=255, nullable=true)
      */
-    private $updatedAt;
+    private $updatedBy;
 
     public function getId(): ?int
     {
@@ -133,6 +133,18 @@ class Secteur
         return $this;
     }
 
+    public function getDeletedBy(): ?string
+    {
+        return $this->deletedBy;
+    }
+
+    public function setDeletedBy(?string $deletedBy): self
+    {
+        $this->deletedBy = $deletedBy;
+
+        return $this;
+    }
+
     public function getUpdatedBy(): ?string
     {
         return $this->updatedBy;
@@ -141,18 +153,6 @@ class Secteur
     public function setUpdatedBy(?string $updatedBy): self
     {
         $this->updatedBy = $updatedBy;
-
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeInterface
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
 
         return $this;
     }
