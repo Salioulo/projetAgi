@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -54,6 +52,12 @@ class Intervention
     private $typeIntervention;
 
     /**
+     * @ORM\ManyToOne(targetEntity="App\Entity\Technicien")
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private $technicien;
+
+    /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Entreprise")
      */
     private $entreprise;
@@ -62,41 +66,6 @@ class Intervention
      * @ORM\ManyToOne(targetEntity="App\Entity\Demande")
      */
     private $demande;
-
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $createdAt;
-
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $updatedAt;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $createdBy;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $updatedBy;
-
-    /**
-     * @ORM\Column(type="datetime", nullable=true)
-     */
-    private $dateFin;
-
-    /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\Technicien")
-     */
-    private $technicien;
-
-    public function __construct()
-    {
-        $this->technicien = new ArrayCollection();
-    }
 
     public function getId(): ?int
     {
@@ -187,6 +156,18 @@ class Intervention
         return $this;
     }
 
+    public function getTechnicien(): ?Technicien
+    {
+        return $this->technicien;
+    }
+
+    public function setTechnicien(?Technicien $technicien): self
+    {
+        $this->technicien = $technicien;
+
+        return $this;
+    }
+
     public function getEntreprise(): ?Entreprise
     {
         return $this->entreprise;
@@ -207,92 +188,6 @@ class Intervention
     public function setDemande(?Demande $demande): self
     {
         $this->demande = $demande;
-
-        return $this;
-    }
-
-    public function getCreatedAt(): ?\DateTimeInterface
-    {
-        return $this->createdAt;
-    }
-
-    public function setCreatedAt(?\DateTimeInterface $createdAt): self
-    {
-        $this->createdAt = $createdAt;
-
-        return $this;
-    }
-
-    public function getUpdatedAt(): ?\DateTimeInterface
-    {
-        return $this->updatedAt;
-    }
-
-    public function setUpdatedAt(?\DateTimeInterface $updatedAt): self
-    {
-        $this->updatedAt = $updatedAt;
-
-        return $this;
-    }
-
-    public function getCreatedBy(): ?string
-    {
-        return $this->createdBy;
-    }
-
-    public function setCreatedBy(?string $createdBy): self
-    {
-        $this->createdBy = $createdBy;
-
-        return $this;
-    }
-
-    public function getUpdatedBy(): ?string
-    {
-        return $this->updatedBy;
-    }
-
-    public function setUpdatedBy(?string $updatedBy): self
-    {
-        $this->updatedBy = $updatedBy;
-
-        return $this;
-    }
-
-    public function getDateFin(): ?\DateTimeInterface
-    {
-        return $this->dateFin;
-    }
-
-    public function setDateFin(?\DateTimeInterface $dateFin): self
-    {
-        $this->dateFin = $dateFin;
-
-        return $this;
-    }
-
-    /**
-     * @return Collection|Technicien[]
-     */
-    public function getTechnicien(): Collection
-    {
-        return $this->technicien;
-    }
-
-    public function addTechnicien(Technicien $technicien): self
-    {
-        if (!$this->technicien->contains($technicien)) {
-            $this->technicien[] = $technicien;
-        }
-
-        return $this;
-    }
-
-    public function removeTechnicien(Technicien $technicien): self
-    {
-        if ($this->technicien->contains($technicien)) {
-            $this->technicien->removeElement($technicien);
-        }
 
         return $this;
     }

@@ -15,7 +15,7 @@ class SecteurType extends AbstractType
             ->add('libelle')
             ->add('nombreTechnicien')
             ->add('nombrePrestataire')
-            //->add('createdAt')
+            ->add('createdAt')
             ->add('actif')
         ;
     }

@@ -29,7 +29,7 @@ class SecteurController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            //$secteur->setCreatedAt(new \DateTimeImmutable());
+            $secteur->setCreatedAt(new \DateTimeImmutable());
             $entityManager = $this->getDoctrine()->getManager();
             $entityManager->persist($secteur);
             $entityManager->flush();
@@ -57,7 +57,6 @@ class SecteurController extends AbstractController
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
-            //$secteur->setUpdatedAt(new \DateTimeImmutable());
             $this->getDoctrine()->getManager()->flush();
 
             return $this->redirectToRoute('admin_secteur_index', [

@@ -34,12 +34,12 @@ class Demande
     /**
      * @ORM\Column(type="string", length=255)
      */
-    private $descriptionProbleme;
+    private $description;
 
     /**
-     * @ORM\Column(type="boolean")
+     * @ORM\Column(type="string", length=255)
      */
-    private $traiter;  
+    private $traiter;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -55,16 +55,6 @@ class Demande
      * @ORM\Column(type="string", length=255, nullable=true)
      */
     private $email;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $libelleMateriel;
-
-    /**
-     * @ORM\Column(type="string", length=255, nullable=true)
-     */
-    private $marque;
 
     public function getId(): ?int
     {
@@ -107,14 +97,14 @@ class Demande
         return $this;
     }
 
-    public function getDescriptionProbleme(): ?string
+    public function getDescription(): ?string
     {
-        return $this->descriptionProbleme;
+        return $this->description;
     }
 
-    public function setDescriptionProbleme(string $descriptionProbleme): self
+    public function setDescription(string $description): self
     {
-        $this->descriptionProbleme = $descriptionProbleme;
+        $this->description = $description;
 
         return $this;
     }
@@ -163,30 +153,6 @@ class Demande
     public function setEmail(?string $email): self
     {
         $this->email = $email;
-
-        return $this;
-    }
-
-    public function getLibelleMateriel(): ?string
-    {
-        return $this->libelleMateriel;
-    }
-
-    public function setLibelleMateriel(?string $libelleMateriel): self
-    {
-        $this->libelleMateriel = $libelleMateriel;
-
-        return $this;
-    }
-
-    public function getMarque(): ?string
-    {
-        return $this->marque;
-    }
-
-    public function setMarque(?string $marque): self
-    {
-        $this->marque = $marque;
 
         return $this;
     }
